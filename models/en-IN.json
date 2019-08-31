@@ -1,76 +1,77 @@
 {
-  "interactionModel": {
-    "languageModel": {
-      "invocationName": "animal sounds",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "AnimalSoundIntent",
-          "slots": [
-            {
-              "name": "animal",
-              "type": "animal"
-            }
-          ],
-          "samples": [
-            "play a {animal} sound",
-            "{animal}",
-            "for a {animal} sound"
-          ]
-        },
-        {
-          "name": "AMAZON.NavigateHomeIntent",
-          "samples": []
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "animal sounds",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AnimalSoundIntent",
+                    "slots": [
+                        {
+                            "name": "animal",
+                            "type": "animal"
+                        }
+                    ],
+                    "samples": [
+                        "play {animal} sound",
+                        "play a {animal} sound",
+                        "{animal}",
+                        "for a {animal} sound"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "animal",
+                    "values": [
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "lion"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "giraffe"
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "dog"
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "elephant"
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "cow"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
-      ],
-      "types": [
-        {
-          "values": [
-            {
-              "id": "1",
-              "name": {
-                "value": "lion"
-              }
-            },
-            {
-              "id": "2",
-              "name": {
-                "value": "giraffe"
-              }
-            },
-            {
-              "id": "3",
-              "name": {
-                "value": "dog"
-              }
-            },
-            {
-              "id": "4",
-              "name": {
-                "value": "elephant"
-              }
-            },
-            {
-              "id": "5",
-              "name": {
-                "value": "cow"
-              }
-            }
-          ],
-          "name": "animal"
-        }
-      ]
     }
-  }
 }
