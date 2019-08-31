@@ -24,20 +24,15 @@ const AnimalSoundIntentHandler = {
   },
    async handle(handlerInput) {
     
-    const getId = handlerInput.requestEnvelope.request.intent.slots.animal.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-    const getAnimal = handlerInput.requestEnvelope.request.intent.slots.animal.value;
-    console.log(getId);
+    var getId = handlerInput.requestEnvelope.request.intent.slots.animal.resolutions.resolutionsPerAuthority[0].values[0].value.id,
+        getAnimal = handlerInput.requestEnvelope.request.intent.slots.animal.value;
+
     const getSounds = await getAnimalSound(getId);
-    
-    console.log('getlink'+getSounds);
-    
-    
-    
     const speechText = 'Get ready for a '+ getAnimal+' sound.!'+ '<audio src="'+getSounds+'" />';
 
     return handlerInput.responseBuilder
-      .speak(speechText + 'What another sounds do you like')
-      .reprompt('What another sounds do you like ?')
+      .speak(speechText + 'What another sounds do you like to hear')
+      .reprompt('What another sounds do you like to hear ?')
       .getResponse();
   },
 };
@@ -71,7 +66,7 @@ const HelpIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
   },
   handle(handlerInput) {
-    const speechText = 'You can say hello to me!';
+    const speechText = 'Just say play lion sound!';
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -134,4 +129,3 @@ exports.handler = skillBuilder
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();
-
